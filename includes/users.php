@@ -21,10 +21,10 @@ Flight::route('GET /users/add',function(){
 	Flight::render('add');
 });
 
-Flight::route('GET /user/edit/@username', function($username){
+Flight::route('GET /users/edit/@username', function($username){
 	Flight::view()->set('title','Users');
 	Flight::render('edit');
-	echo "coba $username";
+	echo "coba $username oo";
 });
 
 Flight::route( 'GET /users(/page/@page:[0-9]+)', function($page){

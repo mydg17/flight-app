@@ -21,7 +21,7 @@
 								<div class="col-lg-6">
 									<div class="form-group">
 										<label class="form-control-label" for="input-username">Username</label>
-										<input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" name="username">
+										<input type="text" id="input-username" class="form-control form-control-alternative" value="<?php echo $username; ?>" name="username">
 									</div>
 								</div>
 								<div class="col-lg-6">
