@@ -42,7 +42,7 @@
 								</td>
 								<td>
 									<a href="<?php echo get_url( 'users/edit/' . $user['username'] ); ?>" class="btn btn-info">Edit</a>
-									<a href="<?php echo get_url( 'users/delete/' . $user['username'] ); ?>" class="delete btn btn-danger">Delete</a>
+									<a href="<?php echo get_url( 'users?us=' . $user['username'] ); ?>" class="delete btn btn-danger">Delete</a>
 								</td>
 							</tr>
 							<?php } ?>

@@ -4,18 +4,23 @@ Flight::route('GET /login', function(){
 });
 
 Flight::route('POST /login', function(){
+    $db = Flight::db();
     $username = $_POST['username'];
     $password = $_POST['password'];
 
     // cek di database dan login / redirect kalo ga terdaftar
-    $exist = $username == 'user';
-    if ( $exist ) {
-    	// logged in
-    	$_SESSION['user'] = 'user';
-    	Flight::redirect( '/' );
-    } else {
-    	// kembalikan ke hlaman login
-    	Flight::redirect( '/login' );
+    $db->where ("username", $username);
+    $db->where ("password",md5($password));
+    $users = $db->get('users');
+
+    if ($db->count > 0){
+    // logged in
+        $_SESSION['user'] = 'user';
+        Flight::redirect( '/' );
+    }
+    else {
+        // kembalikan ke hlaman login
+        Flight::redirect( '/login' );
     }
 });
 
